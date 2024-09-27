@@ -1,0 +1,87 @@
+HTML CODE :-
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tribute to Subhas Chandra Bose</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Tribute to Subhas Chandra Bose</h1>
+        <img src="netaji.jpg" alt="Subhas Chandra Bose" class="main-image">
+    </header>
+    <main>
+        <section>
+            <h2>About Subhas Chandra Bose</h2>
+            <p>Subhas Chandra Bose was a prominent leader in the Indian independence movement against British colonial rule. Born on January 23, 1897, in Cuttack, Odisha, he was a brilliant student who excelled academically. Bose's strong nationalist views and commitment to India's freedom led him to join the Indian National Congress, where he became a key figure advocating for complete independence.</p>
+            <p>Bose is celebrated for his charismatic leadership and strategic vision. He believed in the need for direct action against British rule and famously declared, "Give me blood, and I shall give you freedom!" His relentless pursuit of independence saw him forming the Indian National Army (INA) to fight against the British with the support of Axis powers during World War II.</p>
+        </section>
+        <section>
+            <h2>Achievements</h2>
+            <ul>
+                <li>Formation of the Indian National Army (INA).</li>
+                <li>Leadership in the Azad Hind Government.</li>
+                <li>Global advocacy for India's independence.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Personal Reflection</h2>
+            <p>Subhas Chandra Bose’s unwavering commitment to his country continues to inspire millions. His courage to take bold steps in the face of adversity teaches us the value of perseverance and patriotism. In my own life, I strive to embody his qualities of determination and sacrifice for a greater cause.</p>
+        </section>
+    </main>
+    <footer>
+        <p>Created by Kommi Mahalakshmi</p>
+    </footer>
+</body>
+</html>
+
+
+CSS CODE :-
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background: #6fa3ef;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.main-image {
+    width: 250px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+main {
+    padding: 20px;
+}
+
+h1, h2 {
+    font-family: 'Georgia', serif;
+}
+
+h2 {
+    margin-top: 20px;
+    color: #4a4a4a;
+}
+
+ul {
+    list-style-type: square;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: white;
+}

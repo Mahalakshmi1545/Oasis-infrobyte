@@ -1,0 +1,147 @@
+HTML CODE :-
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Authentication</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Login Authentication System</h1>
+        <div id="registrationForm" class="form">
+            <h2>Register</h2>
+            <input type="text" id="registerUsername" placeholder="Username" required>
+            <input type="password" id="registerPassword" placeholder="Password" required>
+            <button onclick="register()">Register</button>
+            <p id="registerMessage"></p>
+        </div>
+
+        <div id="loginForm" class="form">
+            <h2>Login</h2>
+            <input type="text" id="loginUsername" placeholder="Username" required>
+            <input type="password" id="loginPassword" placeholder="Password" required>
+            <button onclick="login()">Login</button>
+            <p id="loginMessage"></p>
+        </div>
+
+        <div id="securedPage" class="secured" style="display: none;">
+            <h2>Secured Page</h2>
+            <p>Welcome to the secured page, <span id="userGreeting"></span>!</p>
+            <button onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+CSS CODE :-
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #8bc0ee;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 400px;
+    margin: auto;
+    background: rgb(131, 210, 241);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+.form {
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #9ef9fe;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: rgb(189, 252, 141);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+p {
+    color: red;
+    text-align: center;
+}
+
+
+
+JAVASCRIPT CODE :-
+
+let users = [];
+
+function register() {
+    const username = document.getElementById("registerUsername").value;
+    const password = document.getElementById("registerPassword").value;
+    const message = document.getElementById("registerMessage");
+
+    if (users.find(user => user.username === username)) {
+        message.textContent = "Username already exists!";
+        return;
+    }
+
+    users.push({ username, password });
+    message.textContent = "Registration successful!";
+    document.getElementById("registerUsername").value = "";
+    document.getElementById("registerPassword").value = "";
+}
+
+function login() {
+    const username = document.getElementById("loginUsername").value;
+    const password = document.getElementById("loginPassword").value;
+    const message = document.getElementById("loginMessage");
+
+    const user = users.find(user => user.username === username && user.password === password);
+
+    if (user) {
+        message.textContent = "";
+        showSecuredPage(user.username);
+    } else {
+        message.textContent = "Invalid username or password!";
+    }
+}
+
+function showSecuredPage(username) {
+    document.getElementById("loginForm").style.display = "none";
+    document.getElementById("registrationForm").style.display = "none";
+    document.getElementById("securedPage").style.display = "block";
+    document.getElementById("userGreeting").textContent = username;
+}
+
+function logout() {
+    document.getElementById("securedPage").style.display = "none";
+    document.getElementById("loginForm").style.display = "block";
+    document.getElementById("registrationForm").style.display = "block";
+}
+
+
